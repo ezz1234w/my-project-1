@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinh Profile</title>
+    <style>
+        /* Đặt kiểu chữ và màu nền cho toàn bộ trang */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e0; /* Màu nền xám sáng */
+            color: #333; /* Màu chữ tối hơn cho độ tương phản */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Đảm bảo trang web ít nhất có chiều cao của viewport */
+        }
+
+        /* Định dạng cho header */
+        header {
+            background-color: #555; /* Màu xám trung bình cho header */
+            color: #fff; /* Màu chữ trắng để nổi bật */
+            padding: 20px;
+            text-align: center;
+            transition: background-color 1s ease; /* Hiệu ứng chuyển màu nền header */
+        }
+
+        /* Định dạng cho phần chính của trang */
+        main {
+            flex: 1; /* Giúp phần chính chiếm không gian còn lại */
+            padding: 20px;
+        }
+
+        /* Định dạng cho các phần trong main */
+        section {
+            background-color: #ccc; /* Màu nền xám sáng cho các phần */
+            border-radius: 8px; /* Bo góc cho các phần */
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        /* Định dạng cho tiêu đề của các phần */
+        h2 {
+            border-bottom: 2px solid #555; /* Dưới tiêu đề có đường viền xám đậm */
+            padding-bottom: 10px;
+            color: #444; /* Màu tiêu đề xám tối hơn một chút */
+        }
+
+        /* Định dạng cho footer */
+        footer {
+            background-color: #555; /* Màu xám trung bình cho footer */
+            color: #fff; /* Màu chữ trắng */
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Vinh Profile</h1>
+    </header>
+    <main>
+        <!-- Nội dung có thể thêm vào đây -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Vinh Profile.</p>
+    </footer>
+    <script>
+        // Mảng màu để thay đổi liên tục
+        const colors = ['#555', '#777', '#999', '#aaa', '#ccc'];
+        let colorIndex = 0;
+
+        function changeHeaderColor() {
+            colorIndex = (colorIndex + 1) % colors.length;
+            document.getElementById('header').style.backgroundColor = colors[colorIndex];
+        }
+
+        // Thay đổi màu nền header mỗi 2 giây
+        setInterval(changeHeaderColor, 2000);
+    </script>
+</body>
+</html>
