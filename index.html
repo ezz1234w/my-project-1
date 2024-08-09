@@ -1,83 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinh Profile</title>
+    <title>Dahood Cash Vinhbel</title>
     <style>
-        /* Đặt kiểu chữ và màu nền cho toàn bộ trang */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0e0e0; /* Màu nền xám sáng */
-            color: #333; /* Màu chữ tối hơn cho độ tương phản */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Đảm bảo trang web ít nhất có chiều cao của viewport */
+            background-color: #4CAF50; /* Màu nền xanh lá */
+            color: #fff; /* Màu chữ trắng để nổi bật trên nền xanh lá */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-
-        /* Định dạng cho header */
         header {
-            background-color: #555; /* Màu xám trung bình cho header */
-            color: #fff; /* Màu chữ trắng để nổi bật */
-            padding: 20px;
+            background-color: rgba(56, 142, 60, 0.8); /* Màu xanh lá đậm với độ trong suốt cho phần đầu trang */
+            color: white;
+            padding: 10px 20px;
             text-align: center;
-            transition: background-color 1s ease; /* Hiệu ứng chuyển màu nền header */
         }
-
-        /* Định dạng cho phần chính của trang */
         main {
-            flex: 1; /* Giúp phần chính chiếm không gian còn lại */
             padding: 20px;
         }
-
-        /* Định dạng cho các phần trong main */
-        section {
-            background-color: #ccc; /* Màu nền xám sáng cho các phần */
-            border-radius: 8px; /* Bo góc cho các phần */
-            margin-bottom: 20px;
-            padding: 15px;
-        }
-
-        /* Định dạng cho tiêu đề của các phần */
-        h2 {
-            border-bottom: 2px solid #555; /* Dưới tiêu đề có đường viền xám đậm */
-            padding-bottom: 10px;
-            color: #444; /* Màu tiêu đề xám tối hơn một chút */
-        }
-
-        /* Định dạng cho footer */
         footer {
-            background-color: #555; /* Màu xám trung bình cho footer */
-            color: #fff; /* Màu chữ trắng */
-            padding: 10px;
+            background-color: rgba(44, 108, 47, 0.8); /* Màu xanh lá tối hơn với độ trong suốt cho phần chân trang */
+            color: white;
             text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Các lớp màu sắc cho tiêu đề */
+        .color1 { color: #FF5722; } /* Màu cam */
+        .color2 { color: #3F51B5; } /* Màu xanh dương */
+        .color3 { color: #FFEB3B; } /* Màu vàng */
+        .color4 { color: #4CAF50; } /* Màu xanh lá */
+        
+        /* Style cho nút */
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            font-size: 2rem; /* Kích thước chữ lớn để biểu tượng dễ thấy */
+            color: white;
+            background-color: #388E3C; /* Màu nền của nút */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #2C6C2F; /* Màu nền khi di chuột qua */
+        }
+        
+        /* Biểu tượng làm nền */
+        .background-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem; /* Kích thước của biểu tượng */
+            color: rgba(255, 255, 255, 0.2); /* Màu trắng nhạt và độ trong suốt */
+            pointer-events: none; /* Không làm ảnh hưởng đến các phần tử khác */
+            z-index: -1; /* Đặt lớp dưới cùng để không che các phần tử khác */
         }
     </style>
 </head>
 <body>
-    <header id="header">
-        <h1>Vinh Profile</h1>
+    <header>
+        <h1 id="title">Dahood Cash Vinhbel🤑🤑🤑</h1>
     </header>
     <main>
-        <!-- Nội dung có thể thêm vào đây -->
+        <!-- Nút với biểu tượng 💲 và sự kiện onclick để chuyển hướng -->
+        <button class="button" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">💲100m dhc!</button>
+        <!-- Biểu tượng 🤑 làm nền -->
+        <span class="background-icon">🤑</span>
     </main>
     <footer>
-        <p>&copy; 2024 Vinh Profile.</p>
+        <p>&copy; 2024 vinh</p>
     </footer>
     <script>
-        // Mảng màu để thay đổi liên tục
-        const colors = ['#555', '#777', '#999', '#aaa', '#ccc'];
-        let colorIndex = 0;
+        // Danh sách các lớp màu sắc
+        const colors = ['color1', 'color2', 'color3', 'color4'];
+        let currentColorIndex = 0;
 
-        function changeHeaderColor() {
-            colorIndex = (colorIndex + 1) % colors.length;
-            document.getElementById('header').style.backgroundColor = colors[colorIndex];
+        function changeColor() {
+            const titleElement = document.getElementById('title');
+            // Xóa lớp màu hiện tại
+            titleElement.classList.remove(colors[currentColorIndex]);
+            // Cập nhật chỉ mục màu hiện tại
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            // Thêm lớp màu mới
+            titleElement.classList.add(colors[currentColorIndex]);
         }
 
-        // Thay đổi màu nền header mỗi 2 giây
-        setInterval(changeHeaderColor, 2000);
+        // Thay đổi màu sắc mỗi giây
+        setInterval(changeColor, 1000);
     </script>
 </body>
 </html>
